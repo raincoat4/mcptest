@@ -102,6 +102,10 @@ const setupServer = async () => {
   await server.connect(transport);
 };
 
+app.get("/", (req, res) => {
+  res.send("MCP server is alive")
+})
+
 app.post("/mcp", async (req: Request, res: Response) => {
   console.log("Received MCP request:", req.body);
   try {
